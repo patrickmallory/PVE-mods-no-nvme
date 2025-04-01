@@ -178,15 +178,15 @@ function configure {
 	fi
 
 	# Check if NVMe data is available
-	msg "\nDetecting support for NVMe temperature sensors..."
-	if (echo "$sensorsOutput" | grep -q "nvme-"); then
-		msg "Detected sensors:\n$(echo "$sensorsOutput" | grep -o '"nvme[^"]*"' | sed 's/"//g')"
-		ENABLE_NVME_TEMP=true
-		SENSORS_DETECTED=true
-	else
+	#msg "\nDetecting support for NVMe temperature sensors..."
+	#if (echo "$sensorsOutput" | grep -q "nvme-"); then
+		#msg "Detected sensors:\n$(echo "$sensorsOutput" | grep -o '"nvme[^"]*"' | sed 's/"//g')"
+		#ENABLE_NVME_TEMP=true
+		#SENSORS_DETECTED=true
+	#else
 		warn "No NVMe temperature sensors found."
 		ENABLE_NVME_TEMP=false
-	fi
+	#fi
 
 	# Look for fan speeds
 	msg "\nDetecting support for fan speed readings..."
